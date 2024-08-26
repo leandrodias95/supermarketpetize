@@ -3,6 +3,6 @@ COPY . .
 RUN mvn package -DskipTests
 
 FROM eclipse-temurin:17-alpine
-COPY --from=build target/supermarketbnexdocker.jar app.jar
-EXPOSE 8080
+COPY --from=build target/supermarketpetizedocker.jar app.jar
+EXPOSE 8082
 CMD [ "java","-jar","app.jar"]
