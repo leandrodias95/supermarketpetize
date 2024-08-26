@@ -1,7 +1,12 @@
 package br.com.supermarketpetize.model.service;
 
-public class OrderStatusUpdateMessage {
-    private Long orderId;
+import java.io.Serializable;
+
+public class OrderStatusUpdateMessage implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+	
+	private Long orderId;
     private String newStatus;
 
     public OrderStatusUpdateMessage(Long orderId, String newStatus) {

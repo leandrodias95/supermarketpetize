@@ -13,6 +13,6 @@ public class OrderStatusMessageSender {
 
     public void sendOrderStatusUpdateMessage(Long orderId, String newStatus) {
         OrderStatusUpdateMessage message = new OrderStatusUpdateMessage(orderId, newStatus);
-        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME, "order.status.updated", message);
+        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME, RabbitMQConfig.ROUTING_KEY, message);
     }
 }
